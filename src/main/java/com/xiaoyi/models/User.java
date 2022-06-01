@@ -1,23 +1,27 @@
 package com.xiaoyi.models;
 
-import com.xiaoyi.models.interfaces.Payment;
-import lombok.Builder;
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 @Data
-@Builder
 public class User {
-    private String username;
+
+    private Long id;
+    private String name;
     private String password;
+    private String age;
+    private String sex;
     private String mobile;
     private String email;
-    private Payment payment;
-    private Location location;
 
     @Override
     public String toString() {
-        return String.format("username %s, password %s, mobile %s, email %s, balance %s",
-                username, password, mobile, email, payment.checkBalance());
+        return String.format("username %s, password %s, mobile %s, email %s",
+                name, password, mobile, email);
     }
 
 }

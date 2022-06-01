@@ -3,18 +3,42 @@ package com.xiaoyi.controllers;
 import com.xiaoyi.models.User;
 import com.xiaoyi.services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseCookie;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-@RequiredArgsConstructor
+import javax.swing.text.html.Option;
+import java.util.List;
+import java.util.Optional;
+
+@Controller
 public class LoginController {
 
-    private final UserService userService;
-
-    public String login(String username, String password) {
-        return userService.login(username, password);
-    }
+    @Autowired
+    private UserService userService;
 
     public User getCurrentUser() {
         return userService.getCurrentUser();
+    }
+
+    @RequestMapping("/users")
+    public List<User> findAll() {return userService.findAll();}
+
+    @RequestMapping(value = "/login/username/{username}/password/{password}",
+            method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<User> login(@PathVariable String username, @PathVariable String password) {
+        Optional<User> user = userService.findByUserName(username).stream().findFirst();
+        if (user.isPresent() && user.get().getPassword().equals(password)) {
+
+            return new ResponseEntity<>(user.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     public void logout() {

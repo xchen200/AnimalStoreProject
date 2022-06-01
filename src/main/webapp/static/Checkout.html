@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <script type="module" src="js/Checkout.js"></script>
+</head>
+<body>
+<div>
+    <h2>Checkout</h2>
+    <img src="https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/08/akita-detail.jpg?bust=1535565032&width=355" alt="dog">
+    <div>Fill the form to purchase the animal!</div>
+    <br>
+    <form>
+        First Name : <input type="text" id="fname"/><br>
+        Last Name : <input type="text" id="lname" /><br>
+        Street Address : <input type="text" id="address"/><br>
+        Apt, Suite,unit,floor et(Optional) : <input type="text" id="apt"/><br>
+        City : <input type="text" id="city" /><br>
+        Zip Code : <input type="text" id="zip" /><br>
+        Mobile : <input type="text" id="mobile" /><br>
+        Email : <input type="text" id="email" /><br>
+        Payment : <select name="payment" id="payment">
+        <option>Credit</option>
+        <option>Paypal</option>
+        <option>Apple Pay</option>
+    </select><br>
+        <input type="submit" value="Checkout" onclick="displayEnteredData();"/>
+    </form>
+</div>
+<div>
+    <a href="HomePage.html">Cancel Order</a>
+</div>
+
+</body>
+</html>
