@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="css/Login.css">
-    <script type="module" src="js/Login.js"></script>
+    <link rel="stylesheet" href="<c:url value="/static/css/Login.css" />">
+    <script type="module" src="<c:url value="/static/js/Login.js" />"></script>
 </head>
 <body>
 <h2>Login</h2>
@@ -15,7 +15,7 @@
 
 <div id="id01" class="modal">
 
-    <form class="modal-content animate" action="login">
+    <form class="modal-content animate" action="login" method="post">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             <img src="https://static.runoob.com/images/mix/img_avatar.png" alt="Avatar" class="avatar">
@@ -23,14 +23,12 @@
 
         <div class="container">
             <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" id="username" required
-                value="<c:out value='{customer.username}' />" />
+            <input type="text" placeholder="Enter Username" id="username" required>
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" id="password" required
-                   value="<c:out value='{customer.password}' />" />
+            <input type="password" placeholder="Enter Password" id="password" required>
 
-            <input type="submit" >Login</input>
+            <button type="button" onclick=login()>Login</button>
             <input type="checkbox" checked="checked"> Remember Me
         </div>
 
