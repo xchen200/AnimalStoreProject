@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>HomePage</title>
-    <link rel="stylesheet" href="css/HomePage.css">
-    <script type="module" src="js/HomePage.js"></script>
+    <link rel="stylesheet" href="<c:url value="/static/css/HomePage.css" />">
+    <script type="module" src="<c:url value="/static/js/HomePage.js" />"></script>
 </head>
 <body>
 
@@ -19,7 +19,14 @@
 </div>
 
 <div id="main">
-    <div id="username">Please Login in</div>
+
+    <c:if test="${username != null}">
+        <div>Welcome <c:out value="${username}" /></div>
+    </c:if>
+    <c:if test="${username == null}">
+        <div>Please Login in</div>
+    </c:if>
+
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Home Page</span>
     <div>
         <table cellpadding="15" cellspacing="15">

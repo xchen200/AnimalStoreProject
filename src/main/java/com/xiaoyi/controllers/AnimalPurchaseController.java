@@ -14,7 +14,7 @@ public class AnimalPurchaseController {
 
     public void purchaseAnimal(Animal animal) {
         try {
-            userService.pay(animal.getPrice());
+//            userService.pay(animal.getPrice());
             animalService.sellerAnimal(animal.getId());
         } catch (NegativeBalanceException e) {
             System.out.println(e.getMessage());

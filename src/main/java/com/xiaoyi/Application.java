@@ -17,7 +17,12 @@ import com.xiaoyi.services.AnimalService;
 import com.xiaoyi.services.UserService;
 import com.xiaoyi.storages.AnimalStorage;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -31,6 +36,9 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
+
+
+
 
 //    private static void localConsole() {
 //        AnimalStorage animalStorage = new AnimalStorage();

@@ -10,10 +10,12 @@ public class RegisterController {
     private final UserService userService;
 
     public String register(String username, String password, String mobile, String email) {
-        return userService.register(username, password, mobile, email);
+//        return userService.register(username, password, mobile, email);
+        return null;
     }
 
     public String register(User user) {
-        return userService.register(user);
+//        return userService.register(user);
+        return null;
     }
 }

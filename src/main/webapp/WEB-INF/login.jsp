@@ -23,13 +23,13 @@
 
         <div class="container">
             <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" id="username" required>
+            <input type="text" placeholder="Enter Username" id="username" name="username" required />
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" id="password" required>
+            <input type="password" placeholder="Enter Password" id="password" name="password" required />
 
-            <button type="button" onclick=login()>Login</button>
-            <input type="checkbox" checked="checked"> Remember Me
+            <input type="submit" value="Login" />
+            <input type="checkbox" checked="checked" /> Remember Me
         </div>
 
         <div class="container" style="background-color:#f1f1f1">

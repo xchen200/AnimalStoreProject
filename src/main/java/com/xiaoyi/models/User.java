@@ -17,6 +17,7 @@ public class User {
     private String sex;
     private String mobile;
     private String email;
+    private String role;
 
     @Override
     public String toString() {
