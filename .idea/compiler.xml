@@ -8,13 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="AnimalStore" />
+        <module name="AnimalStoreProject" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="14" />
+    <bytecodeTargetLevel target="11" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="AnimalStore" options="-parameters --add-modules java.base,java.sql" />
+      <module name="AnimalStoreProject" options="-parameters" />
     </option>
   </component>
 </project>

@@ -1,15 +1,23 @@
 export function ajax(method, url, data, callback, errorHandler) {
     var xhr = new XMLHttpRequest();
+    var formData = new FormData();
     if (data != null) {
-        url += '/'
-        for(let key in data) {
-            url += (key + '/' + data[key] + '/');
+        if (method === "GET") {
+            url += '/'
+            for (let key in data) {
+                url += (key + '/' + data[key] + '/');
+            }
+            url = url.substr(0, url.length - 1);
+        } else if (method === "POST") {
+            for(var i=0; i< data.length; i++)
+            {
+                formData.append(data[i].name, data[i].value);
+            }
         }
-        url = url.substr(0, url.length -1);
     }
     xhr.open(method, url, true);
     xhr.onload = function() {
-        if (xhr.status == 200) {
+        if (xhr.status === 200) {
             if(callback != null) {
                 callback(xhr.responseText);
             }

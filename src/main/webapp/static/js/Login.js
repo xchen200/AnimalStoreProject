@@ -1,43 +1,30 @@
-import {ajax, setCookie} from "./Common.js";
-
-var modal = document.getElementById('id01');
-var domain = "http://localhost:5001/"
-
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// }
-
-function login() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var req = {
-        username: username,
-        password: password
+$("#loginForm").ajaxForm({
+    success: function(response, statusText, xhr, $form)  {
+        console.log(response);
+        if(response == null || response.principal == null || response.principal.username == null) {
+            printAuthenticationFail();
+        } else {
+            document.location.href = "/";
+        }
+    },
+    error: function(response, statusText, error, $form)  {
+        if(response != null && response.message == "authentication-failure") {
+            printAuthenticationFail();
+        } else {
+            printNetworkIssue();
+        }
     }
-    ajax("GET",
-        domain + "login",
-        req,
-        returnHomePage,
-        handleError);
+});
+
+$("#LoginFormModal").on("hidden.bs.modal", function () {
+    $("#loginError").html("")
+})
+
+function printAuthenticationFail() {
+    $("#loginError").html("Username or Password Error")
 }
 
-function returnHomePage(msg) {
-    var jsonObj = JSON.parse(msg);
-
-    var username = jsonObj.name;
-
-    setCookie("username", username);
-
-    alert("Login successful with " + username)
-
-    window.location.replace("http://localhost:5001/")
+function printNetworkIssue() {
+    $("#loginError").html("Network Issue")
 }
-
-function handleError() {
-    alert("username and password mismatch, pls re-enter");
-}
-
-window.login = login;
 

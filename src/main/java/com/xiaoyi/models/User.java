@@ -1,17 +1,17 @@
 package com.xiaoyi.models;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Data
+@Builder
 public class User {
 
     private Long id;
-    private String name;
+
+    private String username;
     private String password;
     private String age;
     private String sex;
@@ -22,7 +22,7 @@ public class User {
     @Override
     public String toString() {
         return String.format("username %s, password %s, mobile %s, email %s",
-                name, password, mobile, email);
+                username, password, mobile, email);
     }
 
 }

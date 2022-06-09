@@ -48,12 +48,17 @@ public class UserService implements UserDetailsService {
         }
     }
 
-    private GrantedAuthority getUserAuthority(String role) {
+    public void insertUserToDB(User user) {
+        String sql = "INSERT INTO customers (`name`, sex, email, mobile, `password`, `role`) VALUES (?, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, user.getUsername(), user.getSex(), user.getEmail(), user.getMobile(), user.getPassword(), user.getRole());
+    }
+
+    public static GrantedAuthority getUserAuthority(String role) {
         return new SimpleGrantedAuthority(role);
     }
 
-    private UserDetails buildUserForAuthentication(User user, List<GrantedAuthority> authorities) {
-        return new org.springframework.security.core.userdetails.User(user.getName(), user.getPassword(),
+    public static UserDetails buildUserForAuthentication(User user, List<GrantedAuthority> authorities) {
+        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
                 true, true, true, true, authorities);
     }
 }

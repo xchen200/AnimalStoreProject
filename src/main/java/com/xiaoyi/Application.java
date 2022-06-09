@@ -1,31 +1,8 @@
 package com.xiaoyi;
 
-import com.xiaoyi.controllers.AnimalPurchaseController;
-import com.xiaoyi.controllers.AnimalQueryController;
-import com.xiaoyi.controllers.LoginController;
-import com.xiaoyi.controllers.RegisterController;
-import com.xiaoyi.models.Animal;
-import com.xiaoyi.models.Location;
-import com.xiaoyi.models.User;
-import com.xiaoyi.models.animals.Cat;
-import com.xiaoyi.models.animals.Dog;
-import com.xiaoyi.models.enums.AnimalType;
-import com.xiaoyi.models.enums.CatType;
-import com.xiaoyi.models.enums.DogType;
-import com.xiaoyi.models.payments.Paypal;
-import com.xiaoyi.services.AnimalService;
-import com.xiaoyi.services.UserService;
-import com.xiaoyi.storages.AnimalStorage;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.math.BigDecimal;
-import java.util.List;
 import java.util.Scanner;
 
 @SpringBootApplication

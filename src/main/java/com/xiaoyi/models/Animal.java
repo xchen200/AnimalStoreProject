@@ -2,11 +2,10 @@ package com.xiaoyi.models;
 
 import com.xiaoyi.models.enums.AnimalStatus;
 import com.xiaoyi.models.enums.AnimalType;
+
 import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
-
-import java.math.BigDecimal;
 
 @Data
 @SuperBuilder
@@ -16,7 +15,7 @@ public abstract class Animal {
     private String seller;
     private String mobile;
     private String email;
-    private BigDecimal price;
+    private Integer price;
 
     @Builder.Default
     private AnimalStatus status = AnimalStatus.AVAILABLE;
@@ -25,6 +24,11 @@ public abstract class Animal {
     private AnimalType animalType;
 
     public abstract String getSubType();
+    
+    private String pictureUrl1;
+    private String pictureUrl2; 
+    private String intro;
+
 
     @Override
     public String toString() {

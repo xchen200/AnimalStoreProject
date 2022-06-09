@@ -9,6 +9,11 @@ public class AdminController {
 
     @GetMapping("/admin")
     public String showAdmin(Model model) {
-        return "adminPage";
+    	model.addAttribute("msg","login success......");
+        return "index";
+    }
+    @GetMapping("/adminLogin")
+    public String adminLogin() {
+        return "adminLogin";
     }
 }
