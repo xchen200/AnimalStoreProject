@@ -71,21 +71,21 @@
 			<div class="col-sm-6 col-md-4 col-lg-3 ">
 				<div class="thumbnail">
 					<a href="javascript:dopay(1);"> 
-						<img src="/static/img/wechat.jpg" alt="WeChat Pay">
+						<img src="/static/img/paypal.jpg" alt="Paypal Pay">
 					</a>
 				</div>
 			</div>
 			<div class="col-sm-6 col-md-4 col-lg-3 ">
 				<div class="thumbnail">
 					<a href="javascript:dopay(2);"> 
-						<img src="/static/img/alipay.jpg" alt="pay by AliPay">
+						<img src="/static/img/google pay.jpg" alt="pay by google pay">
 					</a>
 				</div>
 			</div>
 			<div class="col-sm-6 col-md-4 col-lg-3 ">
 				<div class="thumbnail">
 					<a href="javascript:dopay(3);"> 
-						<img src="/static/img/offline.jpg" alt="cash on delivery">
+						<img src="/static/img/apple pay.png" alt="pay by apple pay">
 					</a>
 				</div>
 			</div>

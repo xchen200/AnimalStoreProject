@@ -22,12 +22,12 @@
                         <c:if test="${element.type == 'animal'}">
                             <h3 class="card-title">${element.name}</h3>
                             <p class="card-text">type: ${element.animalType}</p>
-                            <p class="card-text">price: ${element.price}</p>
+                            <p class="card-text">price: $${element.price}</p>
                             <a href="/animalDetail?id=${element.id}" class="btn btn-primary">Read More</a>
                         </c:if>
                         <c:if test="${element.type == 'post'}">
                             <p class="card-text">${element.post}</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
+<%--                            <a href="#" class="btn btn-primary">Read More</a>--%>
                         </c:if>
                     </div>
                 </div>
